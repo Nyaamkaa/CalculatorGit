@@ -17,11 +17,11 @@ public class CalcManager : MonoBehaviour
     private double result;
     private char storedOperator;
 
-    void Start()
+    private void Start()
     {
         ButtonInput('c');
     }
-    void ClearCalc()
+    private void ClearCalc()
     {
         countingString.text = "0";
         countOperator.text = "";
@@ -29,7 +29,7 @@ public class CalcManager : MonoBehaviour
         firstValue = result = secondValue = 0;
         storedOperator = ' ';
     }
-    void UpdateСounting()
+    private void UpdateСounting()
     {
         if (!errorCount)
         {
@@ -37,7 +37,8 @@ public class CalcManager : MonoBehaviour
         }
         countValid = false;
     }
-    void CalcResult(char activeOperator)
+
+    private void CalcResult(char activeOperator)
     {
         switch (activeOperator)
         {
