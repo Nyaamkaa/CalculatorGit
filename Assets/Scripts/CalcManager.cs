@@ -58,7 +58,6 @@ public class CalcManager : MonoBehaviour
                 if (firstValue != 0)
                 {
                     result = secondValue / firstValue;
-
                 }
                 else
                 {
@@ -83,21 +82,23 @@ public class CalcManager : MonoBehaviour
 
         if ((caption >= '0' && caption <= '9') || caption == ',')
         {
-
             if (countingString.text.Length < 15 || !countValid)
             {
+
                 if (!countValid)
                 {
-                    countingString.text = (caption == ',' ? "0" : "");
+                    countingString.text = (caption == ',' ? "0" : " ");
                 }
                 else if (countingString.text == "0" && caption != ',')
                 {
                     countingString.text = "";
                 }
+             
                 countingString.text += caption;
                 countValid = true;
             }
         }
+
         else if (caption == 'c')
         {
             ClearCalc();
