@@ -89,12 +89,25 @@ public class CalcManager : MonoBehaviour
                 {
                     countingString.text = (caption == ',' ? "0" : " ");
                 }
+               
                 else if (countingString.text == "0" && caption != ',')
                 {
                     countingString.text = "";
                 }
-             
-                countingString.text += caption;
+                // ограничения по запятой
+                if (!countingString.text.Contains(",") && !(caption == ','))
+                {
+                    countingString.text += caption;
+                }
+                if (!countingString.text.Contains(",") && (caption == ','))
+                {
+                    countingString.text += caption;
+                }
+                if (countingString.text.Contains(",") && !(caption == ','))
+                {
+                    countingString.text += caption;
+                }
+
                 countValid = true;
             }
         }
